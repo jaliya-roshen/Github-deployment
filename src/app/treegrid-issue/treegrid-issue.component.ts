@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SohoDataGridComponent } from 'ids-enterprise-ng';
 import { State } from './screen-state-enum';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-treegrid-issue',
@@ -9,7 +10,8 @@ import { State } from './screen-state-enum';
   styleUrl: './treegrid-issue.component.css',
 })
 export class TreegridIssueComponent implements OnInit {
-  @ViewChild(SohoDataGridComponent, { static: false }) dataGrid?: SohoDataGridComponent;
+  @ViewChild(SohoDataGridComponent, { static: false })
+  dataGrid?: SohoDataGridComponent;
 
   columns: any[] = [];
   data: any;
@@ -21,7 +23,7 @@ export class TreegridIssueComponent implements OnInit {
   user: any;
   userGuids: any;
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     console.log('ngOnInit');
@@ -125,59 +127,8 @@ export class TreegridIssueComponent implements OnInit {
   }
 
   getData(): any[] {
-    this.data = [
-      {
-        id: 1,
-        name: 'John Doe',
-        address: '1234 Main Street, Anytown, Anystate, 12345',
-      },
-      {
-        id: 2,
-        name: 'Jane Smith',
-        address: '5678 Oak Street, Sometown, Somestate, 67890',
-      },
-      {
-        id: 3,
-        name: 'Bob Johnson',
-        address: '91011 Pine Road, Newtown, Newstate, 111213',
-      },
-      {
-        id: 4,
-        name: 'Bob Williams',
-        address: '1122 Maple Avenue, Smalltown, Anycounty, 22334',
-      },
-      {
-        id: 5,
-        name: 'Charlie Brown',
-        address: '9988 Birch Lane, Middletown, Bigstate, 33445',
-      },
-      {
-        id: 6,
-        name: 'Emily Charlie',
-        address: '4455 Cedar Street, Capitalcity, Bigstate, 44556',
-      },
-      {
-        id: 7,
-        name: 'Franklin Adams',
-        address: '2233 Elm Drive, Littletown, Oldstate, 55667',
-      },
-      {
-        id: 8,
-        name: 'Grace Lee',
-        address: '7766 Pine Boulevard, Upstate, Newregion, 66778',
-      },
-      {
-        id: 9,
-        name: 'Henry Clark',
-        address: '3344 Oak Avenue, Downtown, Southstate, 77889',
-      },
-      {
-        id: 10,
-        name: 'Isabella Martinez',
-        address: '9900 Walnut Street, Northtown, Eaststate, 88990',
-      },
-    ];
+    this.data = this.dataService.getData();
     console.log(this.data);
     return this.data;
-  }  
+  }
 }
