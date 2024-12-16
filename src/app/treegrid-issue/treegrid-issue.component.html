@@ -38,7 +38,7 @@
 				</div>
 			</div>
 			<div soho-datagrid id="rpa-prcs-grid" *ngIf="datagridOptions" [gridOptions]="datagridOptions"
-				(selected)="onSelected($event.rows)"></div>
+				(selected)="onSelect($event.rows)"></div>
 		</ng-template>
 		<ng-container *ngIf="drilldownView; else mainGrid">
 			<div class="breadcrumb">

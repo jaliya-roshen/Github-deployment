@@ -92,9 +92,10 @@ export class TreegridIssueComponent implements OnInit {
     return this.columns;
   }
 
-  onSelected(e: any): void {
+  onSelect(e: SohoDataGridSelectedEvent): void {
+    console.log('Debug Event', e); // This return all the data when filter some specific data
     this.user = e[0]?.data?.id;
-    this.userGuids = e.map((del) => del.data.id);
+    //this.userGuids = e.map((del) => del.data.id);
   }
 
   // Method to delete selected rows

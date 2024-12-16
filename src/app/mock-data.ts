@@ -36,7 +36,7 @@ export const MOCK_DATA = [
   },
   {
     id: 8,
-    name: 'Grace Lee',
+    name: 'Emily Lee',
     address: '7766 Pine Boulevard, Upstate, Newregion, 66778',
   },
   {
@@ -46,13 +46,13 @@ export const MOCK_DATA = [
   },
   {
     id: 10,
-    name: 'Isabella Martinez',
+    name: 'Isabella Emily',
     address: '9900 Walnut Street, Northtown, Eaststate, 88990',
   },
   // Sample entries for demonstration; replicate similar format for 200+ records
-  ...Array.from({ length: 2090 }, (_, i) => ({
-    id: i + 11,
-    name: `Sample Name ${i + 11}`,
-    address: `${i + 100} Random Street, City${i + 1}, State${i % 50}, ${10000 + i}`,
-  })),
+  // ...Array.from({ length: 2090 }, (_, i) => ({
+  //   id: i + 11,
+  //   name: `Sample Name ${i + 11}`,
+  //   address: `${i + 100} Random Street, City${i + 1}, State${i % 50}, ${10000 + i}`,
+  // })),
 ];
